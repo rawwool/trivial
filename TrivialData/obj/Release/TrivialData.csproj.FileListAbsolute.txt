@@ -1,0 +1,10 @@
+C:\Dev\Projects\Travails\TrivialData\bin\Release\TrivialData.dll
+C:\Dev\Projects\Travails\TrivialData\bin\Release\TrivialData.pdb
+C:\Dev\Projects\Travails\TrivialData\bin\Release\LiteDB.dll
+C:\Dev\Projects\Travails\TrivialData\obj\Release\TrivialData.dll
+C:\Dev\Projects\Travails\TrivialData\obj\Release\TrivialData.pdb
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\bin\Release\TrivialData.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\bin\Release\TrivialData.pdb
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\bin\Release\LiteDB.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\obj\Release\TrivialData.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\obj\Release\TrivialData.pdb

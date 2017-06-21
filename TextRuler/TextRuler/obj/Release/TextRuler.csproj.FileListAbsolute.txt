@@ -1,0 +1,14 @@
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.Form1.resources
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.Properties.Resources.resources
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.AdvancedTextEditorControl.AdvancedTextEditor.resources
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.Dialogs.dlgFind.resources
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.csproj.GenerateResource.Cache
+C:\Dev\Projects\TextRuler\TextRuler\bin\Release\TextRuler.dll
+C:\Dev\Projects\TextRuler\TextRuler\obj\Release\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\bin\Release\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.Form1.resources
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.Properties.Resources.resources
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.AdvancedTextEditorControl.AdvancedTextEditor.resources
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.Dialogs.dlgFind.resources
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.csproj.GenerateResource.Cache
+C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.dll

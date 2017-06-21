@@ -1,0 +1,15 @@
+C:\Dev\Projects\Travails\TrivialTests\bin\Debug\TrivialTests.dll
+C:\Dev\Projects\Travails\TrivialTests\bin\Debug\TrivialTests.pdb
+C:\Dev\Projects\Travails\TrivialTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Dev\Projects\Travails\TrivialTests\bin\Debug\TextRuler.dll
+C:\Dev\Projects\Travails\TrivialTests\bin\Debug\TextRuler.pdb
+C:\Dev\Projects\Travails\TrivialTests\obj\Debug\TrivialTests.dll
+C:\Dev\Projects\Travails\TrivialTests\obj\Debug\TrivialTests.pdb
+C:\Dev\Projects\Travails\TrivialTests\obj\Debug\TrivialTests.csprojResolveAssemblyReference.cache
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\obj\Debug\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\obj\Debug\TrivialTests.pdb
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\bin\Debug\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\bin\Debug\TrivialTests.pdb
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\bin\Debug\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivial\TrivialTests\bin\Debug\TextRuler.pdb
