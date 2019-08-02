@@ -295,45 +295,83 @@ namespace Travails
 
         void advancedTextEditor1_Query(object sender, QueryArgs args)
         {
-         if (args.Query == null || args.Query.Length == 0) return;
+            //if (args.Query == null || args.Query.Length == 0) return;
 
-            if (args.Query == "<This Week>")
+            //   if (args.Query == "<This Week>")
+            //   {
+            //       var thisWeekActions = DataProvider.GetActions(DateTime.Today, DateTime.MaxValue /*DateTime.Today.AddDays(DayOfWeek.Friday - DateTime.Today.DayOfWeek)*/);
+            //       var oldDueActions = DataProvider.GetActions(DateTime.MinValue, DateTime.Today.AddDays(-1)).OrderByDescending(s=>s.DateDue).ToList();
+            //       ShowQueryresults("<This Week>", thisWeekActions, "Today and future", oldDueActions, "Past");
+            //   }
+            //   //string verb = args.Query.Split(" ").FirstOrDefault().ToLower();
+            //   //if (verb == "search")
+            //   {
+            //       //List<string> terms = args.Query.Split(" ")/*.Skip(1)*/.Select(s => s.Trim()).ToList();
+
+            //       // Get the terms with % and #
+            //       //var tagTerms = terms.Where(s => s.StartsWith("%") || s.StartsWith("#")).ToList();
+            //       var tagTerms = Regex.Matches(args.Query, @"[#%]\w*")
+            //           .Cast<Match>()
+            //           .Select(s => s.Value)
+            //           .ToList();
+            //       if (tagTerms.FirstOrDefault() != null)
+            //       {
+            //           //var tagLines = DB.GetTags(terms.First()).OrderBy(s => s.DateTime);
+            //           var tagLines = DB.GetTags(tagTerms).OrderBy(s => s.DateTime);
+            //           if (tagLines.Count() > 0)
+            //           {
+            //               ShowQueryResults(tagLines, tagTerms);
+            //           }
+            //       }
+            //       //var userTerms = terms.Where(s => s.StartsWith("@")).ToList();
+            //       var userTerms = Regex.Matches(args.Query, @"@\w*")
+            //           .Cast<Match>()
+            //           .Select(s => s.Value)
+            //           .ToList();
+            //       if (userTerms.FirstOrDefault() != null)
+            //       {
+            //           string user = userTerms.FirstOrDefault().Trim('@');
+            //           var fromActions = DataProvider.GetFromActions(user);
+            //           var toActions = DataProvider.GetToActions(user);
+            //           ShowQueryresults(userTerms.First(), fromActions, "From", toActions, "To");
+            //       }
+            //   }
+            if ((args.Query == null ? false : args.Query.Length != 0))
             {
-                var thisWeekActions = DataProvider.GetActions(DateTime.Today, DateTime.MaxValue /*DateTime.Today.AddDays(DayOfWeek.Friday - DateTime.Today.DayOfWeek)*/);
-                var oldDueActions = DataProvider.GetActions(DateTime.MinValue, DateTime.Today.AddDays(-1)).OrderByDescending(s=>s.DateDue).ToList();
-                ShowQueryresults("<This Week>", thisWeekActions, "Today and future", oldDueActions, "Past");
-            }
-            //string verb = args.Query.Split(" ").FirstOrDefault().ToLower();
-            //if (verb == "search")
-            {
-                //List<string> terms = args.Query.Split(" ")/*.Skip(1)*/.Select(s => s.Trim()).ToList();
-                
-                // Get the terms with % and #
-                //var tagTerms = terms.Where(s => s.StartsWith("%") || s.StartsWith("#")).ToList();
-                var tagTerms = Regex.Matches(args.Query, @"[#%]\w*")
-                    .Cast<Match>()
-                    .Select(s => s.Value)
-                    .ToList();
-                if (tagTerms.FirstOrDefault() != null)
+                if (args.Query == "<This Week>")
                 {
-                    //var tagLines = DB.GetTags(terms.First()).OrderBy(s => s.DateTime);
-                    var tagLines = DB.GetTags(tagTerms).OrderBy(s => s.DateTime);
-                    if (tagLines.Count() > 0)
+                    List<ActionData> actions = DataProvider.GetActions(DateTime.Today, DateTime.MaxValue);
+                    DateTime minValue = DateTime.MinValue;
+                    DateTime today = DateTime.Today;
+                    List<ActionData> list = (
+                        from s in DataProvider.GetActions(minValue, today.AddDays(-1))
+                        orderby s.DateDue descending
+                        select s).ToList<ActionData>();
+                    this.ShowQueryresults("<This Week>", actions, "Today and future", list, "Past");
+                }
+                List<string> strs = (
+                    from Match s in Regex.Matches(args.Query, "[#%]\\w*")
+                    select s.Value).ToList<string>();
+                if (strs.FirstOrDefault<string>() != null)
+                {
+                    IOrderedEnumerable<Tag> tags =
+                        from s in DB.GetTags(strs)
+                        orderby s.DateTime
+                        select s;
+                    if (tags.Count<Tag>() > 0)
                     {
-                        ShowQueryResults(tagLines, tagTerms);
+                        this.ShowQueryResults(tags, strs);
                     }
                 }
-                //var userTerms = terms.Where(s => s.StartsWith("@")).ToList();
-                var userTerms = Regex.Matches(args.Query, @"@\w*")
-                    .Cast<Match>()
-                    .Select(s => s.Value)
-                    .ToList();
-                if (userTerms.FirstOrDefault() != null)
+                List<string> list1 = (
+                    from Match s in Regex.Matches(args.Query, "@\\w*")
+                    select s.Value).ToList<string>();
+                if (list1.FirstOrDefault<string>() != null)
                 {
-                    string user = userTerms.FirstOrDefault().Trim('@');
-                    var fromActions = DataProvider.GetFromActions(user);
-                    var toActions = DataProvider.GetToActions(user);
-                    ShowQueryresults(userTerms.First(), fromActions, "From", toActions, "To");
+                    string str = list1.FirstOrDefault<string>().Trim(new char[] { '@' });
+                    List<ActionData> fromActions = DataProvider.GetFromActions(str);
+                    List<ActionData> toActions = DataProvider.GetToActions(str);
+                    this.ShowQueryresults(list1.First<string>(), fromActions, "From", toActions, "To");
                 }
             }
         }

@@ -98,10 +98,14 @@ namespace Travails.Model
 
         public static ActionData[] GetActions(int count)
         {
-            var actions = _DictDayData.Values.SelectMany(s => s.Actions);
-            return actions.OrderBy(s => s.DateDue).Take(count).ToArray();
-
+            IEnumerable<ActionData> actionDatas = DataProvider._DictDayData.Values.SelectMany<DayData, ActionData>((DayData s) => s.Actions);
+            ActionData[] array = (
+                from s in actionDatas
+                orderby s.DateDue
+                select s).Take<ActionData>(count).ToArray<ActionData>();
+            return array;
         }
+
         public static List<ActionData> GetFromActions(string actionSubject)
         {
             return _DictDayData
@@ -124,12 +128,14 @@ namespace Travails.Model
 
         public static List<ActionData> GetActions(DateTime fromDate, DateTime toDate)
         {
-            return _DictDayData
-                .Values.
-                SelectMany(s => s.Actions)
-                .Where(s => s.DateDue >= fromDate && s.DateDue <= toDate)
-                .OrderBy(s => s.DateDue)
-                .ToList();
+            List<ActionData> list = DataProvider
+                ._DictDayData
+                .Values
+                .SelectMany<DayData, ActionData>((DayData s) => s.Actions)
+                    .Where<ActionData>((ActionData s) => (s.DateDue < fromDate ? false : s.DateDue <= toDate))
+                    .OrderBy<ActionData, DateTime>((ActionData s) => s.DateDue)
+                    .ToList<ActionData>();
+            return list;
         }
 
         public static ActionData[] GetFutureActions(int count)

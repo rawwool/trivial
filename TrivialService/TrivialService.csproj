@@ -66,9 +66,9 @@
     <None Include="TravailService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Travails\Travails.csproj">
+    <ProjectReference Include="..\Travails\Trivial.csproj">
       <Project>{2817f3af-3e76-4c93-a89b-c4de849198a7}</Project>
-      <Name>Travails</Name>
+      <Name>Trivial</Name>
     </ProjectReference>
     <ProjectReference Include="..\TrivialModel\TrivialModel.csproj">
       <Project>{0e71b58a-706a-45ae-8fcd-32105effec14}</Project>
