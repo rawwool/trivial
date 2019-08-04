@@ -541,6 +541,11 @@ namespace Travails
                         ForeColor = Color.DarkSlateGray,
                         Font = new Font("Lucida Grande", 10)
                     };
+                    if (action.InfoList != null && action.InfoList.FirstOrDefault() != null)
+                    {
+                        var latestInfo = action.InfoList.OrderByDescending(s => s.DateTime).First();
+                        item.Text += $". [{latestInfo.DateTime}:{latestInfo.Information}]";
+                    }
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Name = "From", Text = action.TrackList.Count() == 0 ? "" : action.TrackList.Aggregate((a, b) => a + ", " + b) });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Name = "From", Text = action.InputFrom.Count() == 0 ? "" : action.InputFrom.Aggregate((a, b) => a + ", " + b) });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Name = "To", Text = action.InputTo.Count() == 0 ? "" : action.InputTo.Aggregate((a, b) => a + ", " + b) });
@@ -562,7 +567,12 @@ namespace Travails
                     }
                     else
                     {
-                        item.BackColor = Color.LightSalmon;
+                        if (action.EffectiveDueDate.Date >= DateTime.Today)
+                        {
+                            item.BackColor = Color.LightGoldenrodYellow;
+                        }
+                        else
+                            item.BackColor = Color.LightSalmon;
                     }
                    
                     lView.Items.Add(item);

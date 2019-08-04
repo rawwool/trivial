@@ -132,7 +132,7 @@ namespace Travails.Model
                 ._DictDayData
                 .Values
                 .SelectMany<DayData, ActionData>((DayData s) => s.Actions)
-                    .Where<ActionData>((ActionData s) => (s.DateDue < fromDate ? false : s.DateDue <= toDate))
+                    .Where<ActionData>((ActionData s) => (s.EffectiveDueDate < fromDate ? false : s.EffectiveDueDate <= toDate))
                     .OrderBy<ActionData, DateTime>((ActionData s) => s.DateDue)
                     .ToList<ActionData>();
             return list;

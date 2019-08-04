@@ -19,6 +19,18 @@ namespace TrivialModel
         public DateTime DateLogged { get; set; }
         [DataMember]
         public DateTime DateDue { get; set; }
+        public DateTime EffectiveDueDate {
+            get
+            {
+                DateTime dueDate = DateDue;
+                if (InfoList != null && InfoList.FirstOrDefault() != null)
+                {
+                    DateTime infoMaxDate = InfoList.OrderByDescending(d => d.DateTime).First().DateTime;
+                    if (infoMaxDate > dueDate) dueDate = infoMaxDate;
+                }
+                return dueDate;
+            }
+        }
         [DataMember]
         public DateTime DateCompleted { get; set; }
         [DataMember]
