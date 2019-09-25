@@ -8,3 +8,11 @@ C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\bin\Debug\TrivialData.pdb
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\bin\Debug\LiteDB.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\obj\Debug\TrivialData.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialData\obj\Debug\TrivialData.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\bin\Debug\TrivialData.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\bin\Debug\TrivialData.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\bin\Debug\LiteDB.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Debug\TrivialData.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Debug\TrivialData.csproj.CopyComplete
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Debug\TrivialData.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Debug\TrivialData.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Debug\TrivialData.csprojAssemblyReference.cache

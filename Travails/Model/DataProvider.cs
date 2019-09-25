@@ -126,6 +126,50 @@ namespace Travails.Model
                 .ToList();
         }
 
+        public static List<ActionData> GetCompletedActions(DateTime fromDate, DateTime toDate)
+        {
+            List<ActionData> list = DataProvider
+                ._DictDayData
+                .Values
+                .SelectMany<DayData, ActionData>((DayData s) => s.CompletedActions)
+                    .Where<ActionData>((ActionData s) => (s.DateCompleted < fromDate ? false : s.DateCompleted <= toDate))
+                    .OrderBy<ActionData, DateTime>((ActionData s) => s.DateCompleted)
+                    .ToList<ActionData>();
+            return list;
+        }
+
+        public class ReportModel
+        {
+            public ActionData Action;
+            public List<InformationData> Info;
+        }
+        public static List<ReportModel> GetActionsWithMovement(DateTime fromDate, DateTime toDate)
+        {
+            var list = DataProvider
+                ._DictDayData
+                .Values
+                .SelectMany<DayData, ActionData>((DayData s) => s.Actions)
+                .Select(s => new ReportModel { Action = s, Info = s.InfoList.Where(i => i.DateTime >= fromDate && i.DateTime <= toDate).ToList() })
+                .Where(s => s.Info.FirstOrDefault() != null)
+                .ToList();
+                
+            return list;
+        }
+
+        public static List<ReportModel> GetCompletedActionsWithMovement(DateTime fromDate, DateTime toDate)
+        {
+            var list2 = DataProvider
+                ._DictDayData
+                .Values
+                .SelectMany<DayData, ActionData>((DayData s) => s.CompletedActions);
+
+             var list =  list2.Select(s => new ReportModel { Action = s, Info = s.InfoList.Where(i => i.DateTime >= fromDate && i.DateTime <= toDate).ToList() })
+                .Where(s => s.Info.FirstOrDefault() != null)
+                .ToList();
+
+            return list;
+        }
+
         public static List<ActionData> GetActions(DateTime fromDate, DateTime toDate)
         {
             List<ActionData> list = DataProvider
@@ -417,11 +461,13 @@ namespace Travails.Model
                             foreach (string line in /*rtb.Lines*/rtb.RealLines)
                             {
                                 ActionData actionData = null;
+                                ActionData completedActionData = null;
                                 WorkData workData = null;
-                                if (TryParse(fileNameWithPath, line, lineIndex, data, dataBuildMode, out actionData, out workData))
+                                if (TryParse(fileNameWithPath, line, lineIndex, data, dataBuildMode, out actionData, out workData, out completedActionData))
                                 {
                                     //actionData.Parent = data;
                                     if (actionData != null) data.Actions.Add(actionData);
+                                    if (completedActionData != null) data.CompletedActions.Add(completedActionData);
                                 }
                                 lineIndex++;
                                 ProcessNGrams(line);
@@ -534,11 +580,14 @@ namespace Travails.Model
             }
         }
 
-        internal static bool TryParse(string documentName, string line, int lineIndex, DayData dayData, DataBuildMode dataBuildMode, out ActionData actionData, out WorkData workData)
+        internal static bool TryParse(string documentName, 
+            string line, int lineIndex, DayData dayData, DataBuildMode dataBuildMode, 
+            out ActionData actionData, out WorkData workData, out ActionData completedActionData)
         {
             bool success = true;
             actionData = null;
             workData = null;
+            completedActionData = null;
 
             try
             {
@@ -562,9 +611,16 @@ namespace Travails.Model
                 }
                 if (line.StartsWith("✓"))
                 {
+                    completedActionData = new ActionData();
+                    completedActionData.Name = line;
+                    completedActionData.Parent = dayData;
+                    completedActionData.DateDue = dayData.Date;
+                    completedActionData.DateLogged = dayData.Date;
+                    completedActionData.DateCompleted = line.ExtractDateTimeAfterSymbol('✓');
+                    ParseActions(line, completedActionData);
                     AddOrUpdateThreadConext(Thread.CurrentThread.ManagedThreadId, null, null);
                     var tags = RebuildTagData(documentName, line, lineIndex, dayData, dayData.Date, "Action Completed", dataBuildMode);
-                    AddOrUpdateThreadConext(Thread.CurrentThread.ManagedThreadId, tags, null);
+                    AddOrUpdateThreadConext(Thread.CurrentThread.ManagedThreadId, tags, completedActionData);
                     return success;
                 }
                 if (line.StartsWith("Ⓘ"))

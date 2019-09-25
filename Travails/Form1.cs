@@ -66,6 +66,7 @@ namespace Travails
             advancedTextEditor1.OnOpen += advancedTextEditor1_OnOpen;
             advancedTextEditor1.QueryListItem += advancedTextEditor1_QueryListItem;
             advancedTextEditor1.Query += advancedTextEditor1_Query;
+            advancedTextEditor1.WeeklyUpdates += AdvancedTextEditor1_WeeklyUpdates;
             advancedTextEditor1.PreviousDocument += AdvancedTextEditor1_PreviousDocument;
             advancedTextEditor1.NextDocument += AdvancedTextEditor1_NextDocument;
             advancedTextEditor1.LinkClicked += AdvancedTextEditor1_LinkClicked;
@@ -93,6 +94,104 @@ namespace Travails
             Application.ApplicationExit += Application_ApplicationExit;
             //var test = MSWordReader.ReadDocument("test.docx");
             DataProvider.ShowRequested += DataProvider_ShowRequested;
+        }
+
+        private void AdvancedTextEditor1_WeeklyUpdates(object sender, WeeklyUpdatesArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            DateTime weekStart = args.Date.AddDays(-(int)args.Date.DayOfWeek + (int)DayOfWeek.Monday);
+            sb.AppendLine("Work");
+
+            var currentActions = DataProvider
+                .GetActionsWithMovement(weekStart, args.Date);
+
+            var completedActions = DataProvider
+                .GetCompletedActionsWithMovement(weekStart, args.Date);
+
+            var list = new List<DataProvider.ReportModel>();
+            list.AddRange(completedActions);
+            list.AddRange(currentActions);
+
+            var tracks = list.SelectMany(s => s.Action.TrackList).GroupBy(s => s).Select(s => s.Key).OrderBy(s=>s);
+            foreach (var track in tracks)
+            {
+                sb.AppendLine(track);
+                var actions = completedActions.Where(d => d.Action.TrackList.Contains(track));
+                if (actions.FirstOrDefault() != null)
+                {
+                    sb.AppendLine("Completed");
+                    foreach (var model in actions)
+                    {
+                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name}");
+                        foreach (var Info in model.Info)
+                        {
+                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information}");
+                        }
+                    }
+                }
+                actions = currentActions.Where(d => d.Action.TrackList.Contains(track));
+                if (actions.FirstOrDefault() != null)
+                {
+                    sb.AppendLine("Ongoing");
+                    foreach (var model in actions)
+                    {
+                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name}");
+                        foreach (var Info in model.Info)
+                        {
+                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information}");
+                        }
+                    }
+                }
+                sb.AppendLine("");
+            }
+            advancedTextEditor1.SetTextAtCusror(sb.ToString());
+            //    Form form = new Form();
+            //    form.Size = new Size(800, 600);
+            //    TextBox tb = new TextBox();
+            //tb.Multiline = true;
+            //    tb.Dock = DockStyle.Fill;
+            //    form.Controls.Add(tb);
+            //    tb.Text = sb.ToString();
+            //    form.Show();
+            /*
+            if ((args.WeekStartDate == null ? false : args.Query.Length != 0))
+            {
+                if (args.Query == "<This Week>")
+                {
+                    List<ActionData> actions = DataProvider.GetActions(DateTime.Today, DateTime.MaxValue);
+                    DateTime minValue = DateTime.MinValue;
+                    DateTime today = DateTime.Today;
+                    List<ActionData> list = (
+                        from s in DataProvider.GetActions(minValue, today.AddDays(-1))
+                        orderby s.DateDue descending
+                        select s).ToList<ActionData>();
+                    this.ShowQueryresults("<This Week>", actions, "Today and future", list, "Past");
+                }
+                List<string> strs = (
+                    from Match s in Regex.Matches(args.Query, "[#%]\\w*")
+                    select s.Value).ToList<string>();
+                if (strs.FirstOrDefault<string>() != null)
+                {
+                    IOrderedEnumerable<Tag> tags =
+                        from s in DB.GetTags(strs)
+                        orderby s.DateTime
+                        select s;
+                    if (tags.Count<Tag>() > 0)
+                    {
+                        this.ShowQueryResults(tags, strs);
+                    }
+                }
+                List<string> list1 = (
+                    from Match s in Regex.Matches(args.Query, "@\\w*")
+                    select s.Value).ToList<string>();
+                if (list1.FirstOrDefault<string>() != null)
+                {
+                    string str = list1.FirstOrDefault<string>().Trim(new char[] { '@' });
+                    List<ActionData> fromActions = DataProvider.GetFromActions(str);
+                    List<ActionData> toActions = DataProvider.GetToActions(str);
+                    this.ShowQueryresults(list1.First<string>(), fromActions, "From", toActions, "To");
+                }
+            }*/
         }
 
         private void AdvancedTextEditor1_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -536,7 +635,7 @@ namespace Travails
                 {
                     ListViewItem item = new ListViewItem()
                     {
-                        Text = action.Name,
+                        Text = action.GetTitle(),
                         Tag = action,
                         ForeColor = Color.DarkSlateGray,
                         Font = new Font("Lucida Grande", 10)
@@ -544,7 +643,7 @@ namespace Travails
                     if (action.InfoList != null && action.InfoList.FirstOrDefault() != null)
                     {
                         var latestInfo = action.InfoList.OrderByDescending(s => s.DateTime).First();
-                        item.Text += $". [{latestInfo.DateTime}:{latestInfo.Information}]";
+                        item.Text += $". [{latestInfo.DateTime}:{latestInfo.Information.RemoveBetweenAngBracketsInclusive()}]";
                     }
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Name = "From", Text = action.TrackList.Count() == 0 ? "" : action.TrackList.Aggregate((a, b) => a + ", " + b) });
                     item.SubItems.Add(new ListViewItem.ListViewSubItem() { Name = "From", Text = action.InputFrom.Count() == 0 ? "" : action.InputFrom.Aggregate((a, b) => a + ", " + b) });
@@ -1025,11 +1124,14 @@ namespace Travails
                         foreach (string line in advancedTextEditor1.RealLines)
                         {
                             ActionData actionData = null;
+                            ActionData completedActionData = null;
                             WorkData workData = null;
                             //DB.RemoveDocumentTags(documentName);
-                            if (DataProvider.TryParse(documentName, line, lineIndex, data, Travails.Model.DataProvider.DataBuildMode.Update, out actionData, out workData))
+                            if (DataProvider.TryParse(documentName, line, lineIndex, data, Travails.Model.DataProvider.DataBuildMode.Update, 
+                                out actionData, out workData, out completedActionData))
                             {
                                 if (actionData != null) data.Actions.Add(actionData);
+                                if (completedActionData != null) data.CompletedActions.Add(completedActionData);
                             }
                             DataProvider.ProcessNGrams(line);
                             lineIndex++;
@@ -1945,25 +2047,29 @@ namespace Travails
 
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string directory = Path.GetDirectoryName(this.GetType().Assembly.Location);
-            TreeNode node = treeView1.SelectedNode;
-            if (node == null) return;
+            try
+            {
+                string directory = Path.GetDirectoryName(this.GetType().Assembly.Location);
+                TreeNode node = treeView1.SelectedNode;
+                if (node == null) return;
 
-            string fileToOpen = string.Empty;
-            if (node.Tag is DateTime || node.Tag is DayData)
-            {
-                //TreeNode diaryNode = treeView1.Nodes.Find(DIARIES_NODE_KEY, false).FirstOrDefault();
-                //fileToOpen = Path.Combine(directory + "\\", /*GetPath(diaryNode) + */treeView1.SelectedNode.Text + ".rtf");
-                fileToOpen = Path.Combine(directory, GetDateString(node.Tag) + ".rtf");
+                string fileToOpen = string.Empty;
+                if (node.Tag is DateTime || node.Tag is DayData)
+                {
+                    //TreeNode diaryNode = treeView1.Nodes.Find(DIARIES_NODE_KEY, false).FirstOrDefault();
+                    //fileToOpen = Path.Combine(directory + "\\", /*GetPath(diaryNode) + */treeView1.SelectedNode.Text + ".rtf");
+                    fileToOpen = Path.Combine(directory, GetDateString(node.Tag) + ".rtf");
+                }
+                else
+                {
+                    fileToOpen = Path.Combine(directory + "\\", GetPath(node).TrimEnd('\\') + ".rtf");
+                }
+                if (File.Exists(fileToOpen))
+                {
+                    Process.Start(fileToOpen);
+                }
             }
-            else
-            {
-                fileToOpen = Path.Combine(directory + "\\", GetPath(node).TrimEnd('\\') + ".rtf");
-            }
-            if (File.Exists(fileToOpen))
-            {
-                Process.Start(fileToOpen);
-            }
+            catch { }
         }
 
         //https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx

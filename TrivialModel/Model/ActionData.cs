@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using TextRuler;
 
 namespace TrivialModel
 {
@@ -46,5 +47,18 @@ namespace TrivialModel
 
         [DataMember]
         public List<InformationData> InfoList = new List<InformationData>();
+
+        public string GetTitle()
+        {
+            List<string> titles = new List<string>();
+            if (Name.GetTitle().Length > 0) titles.Add(Name.GetTitle());
+            foreach(var info in InfoList)
+            {
+                if (info.Information.GetTitle().Length > 0) titles.Add(info.Information.GetTitle());
+            }
+            var title = titles.LastOrDefault();
+            if (title != null) return title;
+            return Name.RemoveBetweenAngBracketsInclusive();
+        }
     }
 }

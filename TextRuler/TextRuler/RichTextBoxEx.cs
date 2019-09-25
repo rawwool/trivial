@@ -27,6 +27,13 @@ namespace RichTextBoxLinks
     {
         public string Query { get; set; }
     }
+
+    public delegate void WeeklyUpdatesHandler(object sender, WeeklyUpdatesArgs args);
+    public class WeeklyUpdatesArgs: EventArgs
+    {
+        public DateTime Date { get; set; }
+    }
+
     public class RichTextBoxEx : ExtendedRichTextBox
 	{
 		#region Interop-Defines

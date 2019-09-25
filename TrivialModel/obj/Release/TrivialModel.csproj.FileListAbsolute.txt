@@ -6,3 +6,9 @@ C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\bin\Release\TrivialModel.d
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\bin\Release\TrivialModel.pdb
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\obj\Release\TrivialModel.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\obj\Release\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Release\TrivialModel.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Release\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.csprojAssemblyReference.cache
