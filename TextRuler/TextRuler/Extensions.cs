@@ -27,7 +27,7 @@ namespace TextRuler
         public static string GetTitle(this string source)
         {
             string result = string.Empty;
-            var pattern = @"""(.*?)""";
+            var pattern = @"\*(.*?)\*";
             var matches = Regex.Matches(source, pattern);
             foreach (Match match in matches)
             {
