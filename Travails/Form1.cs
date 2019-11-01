@@ -122,10 +122,10 @@ namespace Travails
                     sb.AppendLine("Completed");
                     foreach (var model in actions)
                     {
-                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name}");
+                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name.RemoveBetweenAngBracketsInclusive()}");
                         foreach (var Info in model.Info)
                         {
-                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information}");
+                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information.RemoveBetweenAngBracketsInclusive()}");
                         }
                     }
                 }
@@ -135,13 +135,15 @@ namespace Travails
                     sb.AppendLine("Ongoing");
                     foreach (var model in actions)
                     {
-                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name}");
+                        sb.AppendLine($"\t {model.Action.DateLogged.ToShortDateString()}: {model.Action.Name.RemoveBetweenAngBracketsInclusive()}");
                         foreach (var Info in model.Info)
                         {
-                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information}");
+                            sb.AppendLine($"\t\t{Info.DateTime}: {Info.Information.RemoveBetweenAngBracketsInclusive()}");
                         }
+                        sb.AppendLine("");
                     }
                 }
+                sb.AppendLine("--------------------------");
                 sb.AppendLine("");
             }
             advancedTextEditor1.SetTextAtCusror(sb.ToString());

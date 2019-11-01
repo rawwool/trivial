@@ -15,7 +15,7 @@ namespace TextRuler
     {
         public static string RemoveBetweenAngBracketsInclusive(this string source)
         {
-            var pattern = @"<(.*?)>";
+            var pattern = @"<<(.*?)>>";
             var matches = Regex.Matches(source, pattern);
             foreach(Match match in matches)
             {

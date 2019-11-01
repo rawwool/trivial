@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\TextRuler",
+    "\\TextRuler\\TextRuler",
+    "\\TextRuler\\TextRuler\\AdvancedTextEditorControl",
+    "\\Travails",
     "\\TrivialData"
   ],
   "SelectedNode": "\\Travails.sln",
