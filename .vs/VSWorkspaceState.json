@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Travails"
+    "\\TextRuler",
+    "\\TextRuler\\TextRuler",
+    "\\TextRuler\\TextRuler\\AdvancedTextEditorControl",
+    "\\Travails",
+    "\\TrivialData"
   ],
-  "SelectedNode": "\\Travails\\CompressionUtil.cs",
+  "SelectedNode": "\\Travails.sln",
   "PreviewInSolutionExplorer": false
 }

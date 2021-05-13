@@ -27,6 +27,13 @@ namespace RichTextBoxLinks
     {
         public string Query { get; set; }
     }
+
+    public delegate void WeeklyUpdatesHandler(object sender, WeeklyUpdatesArgs args);
+    public class WeeklyUpdatesArgs: EventArgs
+    {
+        public DateTime Date { get; set; }
+    }
+
     public class RichTextBoxEx : ExtendedRichTextBox
 	{
 		#region Interop-Defines
@@ -702,7 +709,7 @@ namespace RichTextBoxLinks
         {
             string fragment = string.Empty;
             int pos = this.SelectionStart-1;
-            if (pos >= 0)
+            if (pos >= 0 && this.Text.Length > pos) 
             {
                 char c = this.Text[pos];
 

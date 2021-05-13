@@ -16,3 +16,15 @@ C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Debug\TextRuler
 C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.csproj.GenerateResource.Cache
 C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\bin\Debug\TextRuler.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\bin\Debug\TextRuler.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.Form1.resources
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.Properties.Resources.resources
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.AdvancedTextEditorControl.AdvancedTextEditor.resources
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.Dialogs.dlgFind.resources
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.csproj.GenerateResource.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\trivial\TextRuler\TextRuler\obj\Debug\TextRuler.csproj.CoreCompileInputs.cache

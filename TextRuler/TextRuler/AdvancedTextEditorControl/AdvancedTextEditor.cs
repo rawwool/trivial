@@ -29,6 +29,7 @@ namespace TextRuler.AdvancedTextEditorControl
         public delegate void SaveHandler(object o, SaveArgs e);
         public event QueryListItemHandler QueryListItem;
         public event QueryHandler Query;
+        public event WeeklyUpdatesHandler WeeklyUpdates;
         public event EventHandler PreviousDocument;
         public event EventHandler NextDocument;
         public event LinkClickedEventHandler LinkClicked;
@@ -499,7 +500,7 @@ namespace TextRuler.AdvancedTextEditorControl
             this.TextEditor.SelectionRightIndent = 0;
             this.TextEditor.SelectionHangingIndent = 0;
 
-            this.TextEditor.Font = new Font("Arial Unicode MS", 12);
+            this.TextEditor.Font = new Font("Arial Unicode MS", 14);
             this.TextEditor.ForeColor = Color.DarkSlateGray;
             this.TextEditor.TextChanged += TextEditor_TextChanged;
 
@@ -2131,6 +2132,10 @@ namespace TextRuler.AdvancedTextEditorControl
             NextDocument?.Invoke(this, EventArgs.Empty);
         }
 
+        public void SetTextAtCusror(string text)
+        {
+            this.TextEditor.SelectedText = text;
+        }
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
             int charIndex = this.TextEditor.GetFirstCharIndexOfCurrentLine();
@@ -2158,6 +2163,15 @@ namespace TextRuler.AdvancedTextEditorControl
                     this.TextEditor.Select(start, textStart.Length);
                     this.TextEditor.SelectionProtected = true;
                 }
+            }
+        }
+
+        private void WeeklyUpdatesCtrWToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (WeeklyUpdates != null)
+            {
+                
+                WeeklyUpdates(sender, new WeeklyUpdatesArgs() { Date = DateTime.Today.AddDays(1) });
             }
         }
     }

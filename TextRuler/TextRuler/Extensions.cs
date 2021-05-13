@@ -13,6 +13,30 @@ namespace TextRuler
 {
     public static class Extensions
     {
+        public static string RemoveBetweenAngBracketsInclusive(this string source)
+        {
+            var pattern = @"<<(.*?)>>";
+            var matches = Regex.Matches(source, pattern);
+            foreach(Match match in matches)
+            {
+                source = source.Replace(match.Value, "<link>");
+            }
+            return source;
+        }
+
+        public static string GetTitle(this string source)
+        {
+            string result = string.Empty;
+            var pattern = @"\*(.*?)\*";
+            var matches = Regex.Matches(source, pattern);
+            foreach (Match match in matches)
+            {
+                result += match.Value + ", ";
+            }
+            result =  result.TrimEnd(' ', ',');
+            return result;
+        }
+
         public static int FindText(this RichTextBox rtb, string textToFind)
         {
             int index = -1;
@@ -54,6 +78,19 @@ namespace TextRuler
             }
         }
 
+        public static DateTime ExtractDateTimeAfterSymbol(this string line, char symbol)
+        {
+            Match match = Regex.Match(line, symbol + @" [\d/]+ [\d/:]+");
+            if (match != null && match.Success)
+            {
+                DateTime dateTime;
+                if (DateTime.TryParse(match.Value.TrimStart(symbol), out dateTime))
+                {
+                    return dateTime;
+                }
+            }
+            return DateTime.MaxValue;
+        }
         public static DateTime ExtractLineDate(this string text)
         {
             var match = Regex.Match(text, @"^\S{1}\d{2}\/\d{2}\/\d{4}");

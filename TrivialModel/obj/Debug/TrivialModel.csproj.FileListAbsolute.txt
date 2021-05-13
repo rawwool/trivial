@@ -6,3 +6,17 @@ C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\bin\Debug\TrivialModel.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\bin\Debug\TrivialModel.pdb
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\obj\Debug\TrivialModel.dll
 C:\Users\rahulkumar\Source\Repos\trivial\TrivialModel\obj\Debug\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Debug\TrivialModel.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Debug\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Debug\TrivialModel.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Debug\TrivialModel.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Debug\TrivialModel.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Debug\TrivialModel.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Debug\TextRuler.dll
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\bin\Debug\TextRuler.pdb
+C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Debug\TrivialModel.csproj.CopyComplete
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\bin\Debug\TextRuler.dll
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\bin\Debug\TextRuler.pdb
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Debug\TrivialModel.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Debug\TrivialModel.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Debug\TrivialModel.csproj.CopyComplete

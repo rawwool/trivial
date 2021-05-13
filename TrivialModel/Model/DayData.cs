@@ -13,6 +13,8 @@ namespace TrivialModel
         public DateTime Date { get; set; }
         //[DataMember]
         public List<ActionData> Actions = new List<ActionData>();
+        public List<ActionData> CompletedActions = new List<ActionData>();
+
         //[DataMember]
         public List<string> HashTags = new List<string>();
         //[DataMember]
