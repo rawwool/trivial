@@ -25,7 +25,7 @@ namespace TextRuler.AdvancedTextEditorControl.FontComboBoxControl
             if (LicenseManager.UsageMode != LicenseUsageMode.Designtime)
                 ListFonts();
             this.DropDownHeight = 300;
-            this.Font = new Font(this.Font.Name, 12);            
+            this.Font = new Font(this.Font.Name, 11);            
             this.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             this.AutoCompleteSource = AutoCompleteSource.ListItems;
             this.MaxDropDownItems = 20;

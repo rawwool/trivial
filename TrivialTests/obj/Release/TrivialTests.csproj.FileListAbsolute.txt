@@ -20,3 +20,6 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Release\Trivia
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Release\TrivialTests.csproj.CopyComplete
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Release\TrivialTests.dll
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Release\TrivialTests.pdb
+C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csproj.CopyComplete
+C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csprojAssemblyReference.cache

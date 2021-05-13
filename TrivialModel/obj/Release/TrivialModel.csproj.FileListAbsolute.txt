@@ -12,3 +12,7 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\Trivia
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.dll
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.pdb
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialModel\obj\Release\TrivialModel.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\bin\Release\TextRuler.dll
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csproj.CopyComplete

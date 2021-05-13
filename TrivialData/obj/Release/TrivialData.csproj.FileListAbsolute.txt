@@ -16,3 +16,6 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Release\Trivial
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Release\TrivialData.csproj.CopyComplete
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Release\TrivialData.dll
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Release\TrivialData.pdb
+C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csproj.CopyComplete
+C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csprojAssemblyReference.cache

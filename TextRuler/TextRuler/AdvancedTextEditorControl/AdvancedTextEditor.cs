@@ -500,7 +500,7 @@ namespace TextRuler.AdvancedTextEditorControl
             this.TextEditor.SelectionRightIndent = 0;
             this.TextEditor.SelectionHangingIndent = 0;
 
-            this.TextEditor.Font = new Font("Arial Unicode MS", 12);
+            this.TextEditor.Font = new Font("Arial Unicode MS", 14);
             this.TextEditor.ForeColor = Color.DarkSlateGray;
             this.TextEditor.TextChanged += TextEditor_TextChanged;
 

@@ -21,3 +21,5 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Release
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Release\TextRuler.csproj.GenerateResource.cache
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Release\TextRuler.csproj.CoreCompileInputs.cache
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TextRuler\TextRuler\obj\Release\TextRuler.dll
+C:\Users\rahulkumar\source\repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TextRuler\TextRuler\obj\Release\TextRuler.csprojAssemblyReference.cache

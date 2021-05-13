@@ -709,7 +709,7 @@ namespace RichTextBoxLinks
         {
             string fragment = string.Empty;
             int pos = this.SelectionStart-1;
-            if (pos >= 0)
+            if (pos >= 0 && this.Text.Length > pos) 
             {
                 char c = this.Text[pos];
 

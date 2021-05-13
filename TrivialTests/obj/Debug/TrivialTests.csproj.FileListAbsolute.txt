@@ -23,3 +23,5 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialT
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialTests.dll
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialTests.pdb
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialTests.csprojAssemblyReference.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Debug\TrivialTests.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Debug\TrivialTests.csproj.CopyComplete
