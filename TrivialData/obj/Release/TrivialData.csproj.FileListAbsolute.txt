@@ -19,3 +19,10 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialData\obj\Release\Trivial
 C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csproj.CoreCompileInputs.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csproj.CopyComplete
 C:\Users\rahulkumar\source\repos\trivial\TrivialData\obj\Release\TrivialData.csprojAssemblyReference.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\bin\Release\TrivialData.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\bin\Release\TrivialData.pdb
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\bin\Release\LiteDB.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\obj\Release\TrivialData.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\obj\Release\TrivialData.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\obj\Release\TrivialData.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialData\obj\Release\TrivialData.pdb
