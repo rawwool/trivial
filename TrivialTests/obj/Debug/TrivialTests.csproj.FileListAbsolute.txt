@@ -25,3 +25,12 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialT
 C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Debug\TrivialTests.csprojAssemblyReference.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Debug\TrivialTests.csproj.CoreCompileInputs.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Debug\TrivialTests.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Debug\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Debug\TrivialTests.pdb
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Debug\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Debug\TextRuler.pdb
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Debug\TrivialTests.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Debug\TrivialTests.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Debug\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Debug\TrivialTests.pdb

@@ -730,7 +730,7 @@ namespace RichTextBoxLinks
         {
             int pos = this.SelectionStart - 1;
             string previousWord = string.Empty;
-            if (pos >= 0)
+            if (pos >= 0 && pos < this.Text.Length)
             {
                 char c = this.Text[pos];
 
@@ -756,7 +756,7 @@ namespace RichTextBoxLinks
             int pos = this.SelectionStart - 1;
             string previousWord = string.Empty;
             string previousToPreviousWord = string.Empty;
-            if (pos >= 0)
+            if (pos >= 0 && pos < this.Text.Length)
             {
                 char c = this.Text[pos];
                 bool isSpecialSymbolPartOfWord = (pos-1> 0) && Text[pos-1] != ' ' && (c == '.' || c == '!' || c == '?');

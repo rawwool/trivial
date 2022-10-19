@@ -23,3 +23,11 @@ C:\Users\rahulkumar\source\repos\rawwool\trivial\TrivialTests\obj\Release\Trivia
 C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csproj.CoreCompileInputs.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csproj.CopyComplete
 C:\Users\rahulkumar\source\repos\trivial\TrivialTests\obj\Release\TrivialTests.csprojAssemblyReference.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Release\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Release\TrivialTests.pdb
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\bin\Release\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Release\TrivialTests.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Release\TrivialTests.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Release\TrivialTests.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialTests\obj\Release\TrivialTests.pdb

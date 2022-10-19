@@ -16,3 +16,11 @@ C:\Users\rahulkumar\source\repos\trivial\TrivialModel\bin\Release\TextRuler.dll
 C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csprojAssemblyReference.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csproj.CoreCompileInputs.cache
 C:\Users\rahulkumar\source\repos\trivial\TrivialModel\obj\Release\TrivialModel.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\bin\Release\TrivialModel.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\bin\Release\TrivialModel.pdb
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\bin\Release\TextRuler.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\obj\Release\TrivialModel.csprojAssemblyReference.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\obj\Release\TrivialModel.csproj.CoreCompileInputs.cache
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\obj\Release\TrivialModel.csproj.CopyComplete
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\obj\Release\TrivialModel.dll
+C:\Users\rahulkumar\Source\Repos\trivialdev\TrivialModel\obj\Release\TrivialModel.pdb
